@@ -17,7 +17,7 @@ class Program
         byte[] buffer = string.IsNullOrEmpty(data) ? Array.Empty<byte>() : Encoding.ASCII.GetBytes(data);
         int timeout = 2000;
 
-        using var ping = new Ping();
+        using Ping ping = new Ping();
         try
         {
             PingReply reply = ping.Send(host, timeout, buffer);
